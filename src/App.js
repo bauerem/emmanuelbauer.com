@@ -5,10 +5,12 @@ import portrait from './assets/portrait.jpg'
 function TopBar() {
   return (
     <Flex color="#E3DCD2" height="5vh" justifyContent="space-between" flexDir="row" backgroundColor="#100C0D">
-      <h1>Object 1</h1>
-      <Flex >
+      <h1>Home</h1>
+      <Flex>
         <Flex>About</Flex>
-        <Flex>Thing 1</Flex>
+        <Box margin="10px" />
+        <Flex>CV</Flex>
+        <Box margin="10px" />
       </Flex>
     </Flex>
   )
@@ -16,9 +18,9 @@ function TopBar() {
 
 function LeftSideBar() {
   return (
-    <Flex color="#E3DCD2" zIndex="1" pos="fixed" height="95vh" width="20vh" flexDir="column" justifyContent="space-between" backgroundColor="#100C0D">
-      <Flex >Object 1</Flex>
-      <Flex >Object 2</Flex>
+    <Flex color="#E3DCD2" zIndex="1" pos="fixed" height="95vh" width="20vh" flexDir="column" justifyContent="space-between">
+      <Flex />
+      <Link href="https://github.com/bauerem">Github</Link>
     </Flex>
   )
 }
@@ -35,11 +37,19 @@ function PageContent() {
             Emmanuel Achille
           </Text>
           <Text color="#CC8B65" fontSize="45">
-            I am a Mathematics MSc student that the <Link href="https://ethz.ch">Swiss Federal Institute of Technology Zurich </Link>
+            I am a Mathematics MSc student that the <Link href="https://ethz.ch">Swiss Federal Institute of Technology in Zürich </Link>
             focusing on machine learning. I am especially interested in reinforcement learning and deep learning applied to
             natural language processing and computer vision.
           </Text>
           <Image src={portrait}/>
+        </Box>
+      </Flex>
+
+      <Flex fontSize="55"  flexDir="column" alignItems="center" justifyContent="center" minHeight="93vh">
+        <Box width="45%">
+          <Text fontSize="75">
+            More stuff comin here soon...
+          </Text>
         </Box>
       </Flex>
     </Flex>
@@ -49,9 +59,9 @@ function PageContent() {
 function App() {
   return (
     <Box height="200vh" fontSize="65">
-      <TopBar />
+
       <Flex height="100%">
-        <LeftSideBar />
+        
         <PageContent />
       </Flex>
     </Box>
