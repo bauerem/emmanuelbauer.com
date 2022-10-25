@@ -4,6 +4,10 @@ import { Flex, Heading, IconButton, Spacer, useColorMode, VStack } from "@chakra
 
 import { FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedIn, FaLinkedin } from 'react-icons/fa'
 
+import  Header  from './components/Header'
+import  Social  from './components/Social'
+import  Profile  from './components/Profile'
+
 //import portrait from './assets/portrait.jpg'
 
 function App() {
@@ -23,6 +27,9 @@ function App() {
         <IconButton ml={2} icon={<FaGithub />} isRound="true" />
         <IconButton ml={8} icon={isDark ? <FaSun/> : <FaMoon />} isRound='true' onClick={toggleColorMode} />
       </Flex>
+      <Header />
+      <Social />
+      <Profile />
     </VStack>
   )
 }
@@ -87,7 +94,7 @@ function App() {
     <Box height="200vh" fontSize="65">
 
       <Flex height="100%">
-        
+
         <PageContent />
       </Flex>
     </Box>
