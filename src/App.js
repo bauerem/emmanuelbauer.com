@@ -1,7 +1,33 @@
-import { Box, Flex, Link, Text, Image } from '@chakra-ui/react'
+//import { Box, Flex, Link, Text, Image } from '@chakra-ui/react'
 
-import portrait from './assets/portrait.jpg'
+import { Flex, Heading, IconButton, Spacer, useColorMode, VStack } from "@chakra-ui/react";
 
+import { FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedIn, FaLinkedin } from 'react-icons/fa'
+
+//import portrait from './assets/portrait.jpg'
+
+function App() {
+
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
+  return(
+    <VStack p={5}>
+      <Flex w="100%">
+        <Heading ml={8} size="md" fontWeight="semibold" color="cyan.400">
+          Hello
+        </Heading>
+        <Spacer></Spacer>
+        <IconButton ml={2} icon={<FaLinkedin />} isRound="true" />
+        <IconButton ml={2} icon={<FaInstagram />} isRound="true" />
+        <IconButton ml={2} icon={<FaGithub />} isRound="true" />
+        <IconButton ml={8} icon={isDark ? <FaSun/> : <FaMoon />} isRound='true' onClick={toggleColorMode} />
+      </Flex>
+    </VStack>
+  )
+}
+
+/*
 function TopBar() {
   return (
     <Flex color="#E3DCD2" height="5vh" justifyContent="space-between" flexDir="row" backgroundColor="#100C0D">
@@ -67,6 +93,7 @@ function App() {
     </Box>
   );
 }
+*/
 
 export default App;
 
