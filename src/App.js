@@ -1,5 +1,5 @@
 //import { Box, Flex, Link, Text, Image } from '@chakra-ui/react'
-
+import  { Routes, Route } from "react-router-dom";
 import { useMediaQuery } from '@chakra-ui/media-query';
 
 import { Box, Flex, Heading, IconButton, Spacer, useColorMode, VStack } from "@chakra-ui/react";
@@ -11,9 +11,15 @@ import  Profile  from './components/Profile'
 
 //import portrait from './assets/portrait.jpg'
 
-function App() {
-  const [ isNotSmallerScreen ] = useMediaQuery("(min-width:600px)");
+function Upload() {
   return(
+    <div />
+  )
+}
+
+function Main() {
+  const [ isNotSmallerScreen ] = useMediaQuery("(min-width:600px)");
+  return (
     <Box>
       <TopBar />
       <Box transform={isNotSmallerScreen ? "translateY(50%)" : ""}>
@@ -24,6 +30,16 @@ function App() {
       </VStack>
       </Box>
     </Box>
+  )
+}
+
+function App() {
+
+  return(
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/upload' element={<Upload />} />
+    </Routes>
   )
 }
 
